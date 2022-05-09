@@ -12,11 +12,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
-<body>
+<body class="grey lighten-4">
     <div class="row">
         <div class="col s12 m12 l12">
-            <h4 class="center red-text">Something We Can't Change is here</h5>
+            <h4 class="center red-text maintext">Something We Can't Change is here</h5>
                 <div class="Printdays"></div>
+        </div>
+
+        <div class="row center">
+            <p class="center">Bulati Hey magar janeka nahi</p>
+            <button class="green pulse btn-large circle btn-floating" id="toTop"> <i class="large material-icons">
+                arrow_circle_up
+            </i></button>
         </div>
 
     </div>
@@ -28,6 +35,24 @@
         document.addEventListener('DOMContentLoaded', function() {
             var elems = document.querySelectorAll('.collapsible');
             var instances = M.Collapsible.init(elems);
+        });
+
+        $(window).on("scroll", function() {
+            if ($(this).scrollTop() > 50) {
+                $('#toTop').fadeIn(400);
+            } else {
+                $('#toTop').fadeOut(400);
+            }
+        });
+
+        $("#toTop").on("click", function() {
+            $("html, body").animate({
+                scrollTop: 0
+            }, 1200);
+            $('.maintext').html('Bola Tha na Janeka Nahi ab fir Monday aa gaya &#128527');
+            setTimeout(function() {
+                $('.maintext').html('Something We Cant Change is here');
+            }, 5000);
         });
     </script>
     <script>
