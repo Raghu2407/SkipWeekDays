@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WeekEnds</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <h4 class="center red-text">Something We Can't Change is here</h5>
+                <div class="Printdays"></div>
+        </div>
+
+    </div>
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.collapsible');
+            var instances = M.Collapsible.init(elems);
+        });
+    </script>
+    <script>
+        const day = new Date();
+        let day1 = day.getDay();
+        let name = '';
+        let emoji = '';
+        let quote = '';
+        for (day1 = 0; day1 <= 7; day1++) {
+
+            if (day1 === 0) {
+                name = 'Monday';
+                emoji = '<span style="font-size:100px;"">&#128530;</span>';
+                quote = '<div class="col s12 m12 l12" style="    font-size: 22px;text-align: center;font-weight: bold;">We start thinking on mondays that how to skip this and get Weekends again';
+            }
+            if (day1 === 1) {
+                name = 'Tuesday';
+                emoji = '<span style="font-size:100px;"">&#128546;</span>';
+                quote = '<div class="col s12 m12 l12" style="font-size: 22px;text-align: center;font-weight: bold;">We see that after completing monday,Ohh its still Tuesday';
+            }
+            if (day1 === 2) {
+                name = 'Wednesday';
+                emoji = '<span style="font-size:100px;"">&#128552;</span>';
+                quote = '<div class="col s12 m12 l12" style="    font-size: 22px;text-align: center;font-weight: bold;"> We have lots many things to buy because its Wednesday and offers day but we cant';
+            }
+            if (day1 === 3) {
+                name = 'Thursday';
+                emoji = '<span style="font-size:100px;"">&#128555;</span>';
+                quote = '<div class="col s12 m12 l12" style="    font-size: 22px;text-align: center;font-weight: bold;">Thursday We get tired but work is workship we cant ignore';
+            }
+            if (day1 === 4) {
+                name = 'Friday';
+                emoji = '<span style="font-size:100px;"">&#128515;</span>';
+                quote = '<div class="col s12 m12 l12" style="    font-size: 22px;text-align: center;font-weight: bold;">Finally its Friday keep Smiling to get Saturday ';
+            }
+            if (day1 === 5) {
+                name = 'Saturday';
+                emoji = '<span style="font-size:100px;"">&#129312;</span>';
+                quote = '<div class="col s12 m12 l12" style="    font-size: 22px;text-align: center;font-weight: bold;">Saturday we feel that we are King/Queen no one cant do anything';
+            }
+            if (day1 === 7) {
+                name = 'Sunday';
+                emoji = '<span style="font-size:100px;">&#128512;</span>';
+                quote = '<div class="col s12 m12 l12" style="    font-size: 22px;text-align: center;font-weight: bold;">We Keep Smiling, but also we know that tomorrow is Monday';
+            }
+            console.log(name);
+            $('.Printdays').append('<div class="col s12 m7" style="height: 650px;"><h2 class="header">' + name + '</h2><div class="card horizontal"><div class="card-stacked"><div class="card-content"><p class="center-align"> ' + emoji + quote + '</p></div></div></div></div>');
+        }
+        // expected output: 2
+    </script>
+</body>
+
+</html>
